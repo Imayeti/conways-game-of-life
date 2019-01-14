@@ -10,6 +10,7 @@ new Vue ({
 
 
   data: {
+    boxNum: 0,
     button: "START",
     speed: 300,
     stopit: false,
@@ -179,5 +180,14 @@ new Vue ({
     stop: function(){
       this.stopit = !this.stopit;
     }
+  },
+
+  computed: {
+  classObject: function () {
+    this.boxNum ++;
+    return this.boxNum;
+
   }
+}
+
 });
