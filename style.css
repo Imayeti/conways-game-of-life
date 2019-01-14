@@ -7,10 +7,6 @@
 }
 
 
-.FlashBackground {
-
-  background-color: grey;
-}
 
 .inlineit {
 
@@ -23,7 +19,7 @@
   margin: .1em;
 }
 .blackBackground {
-  background-color: black;
+  background-color: #333333;
 }
 
 [v-cloak] {display: none}
@@ -38,5 +34,5 @@
   margin: 300 auto;
 }
 body {
-  background-color: #f15c5c !important;
+  background-color: #9b9abb !important;
 }

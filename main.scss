@@ -1,0 +1,63 @@
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$body-bg:       $gray-200;
+$body-color:    $gray-900;
+
+$primary:       #f75f1c; // orange
+$secondary:     #000; //black
+$success:       #d8b95c; // green
+$info:          #881ee4; // purple
+$warning:       #ff9a00; //
+// $danger:        $red ; //
+
+// Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.grid {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+
+}
+
+
+
+.inlineit {
+
+  display: inline-block;
+
+}
+.gridStyling {
+  width: 20px;
+  height: 20px;
+  margin: .1em;
+}
+.blackBackground {
+  background-color: #333333;
+}
+
+[v-cloak] {display: none}
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.centerit {
+  margin: 300 auto;
+}
+body {
+  background-color: #9b9abb !important;
+}
