@@ -1,0 +1,42 @@
+.grid {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+
+}
+
+
+.FlashBackground {
+
+  background-color: grey;
+}
+
+.inlineit {
+
+  display: inline-block;
+
+}
+.gridStyling {
+  width: 20px;
+  height: 20px;
+  margin: .1em;
+}
+.blackBackground {
+  background-color: black;
+}
+
+[v-cloak] {display: none}
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.centerit {
+  margin: 300 auto;
+}
+body {
+  background-color: #f15c5c !important;
+}
