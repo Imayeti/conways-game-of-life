@@ -7490,6 +7490,9 @@ a.text-dark:hover, a.text-dark:focus {
   width: 30px;
   height: 30px; }
 
+.gridStylingLine {
+  height: 30px; }
+
 .blackBackground {
   background-color: #333333; }
 
@@ -7504,6 +7507,6 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 300 auto; }
 
 body {
-  background-color: #9b9abb !important; }
+  background-color: #abaaca !important; }
 
 /*# sourceMappingURL=output.css.map */

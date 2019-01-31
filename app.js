@@ -10,6 +10,8 @@ new Vue ({
 
 
   data: {
+    gotime: false,
+    k: 0,
     boxNum: 0,
     button: "START",
     speed: 300,
@@ -23,9 +25,9 @@ new Vue ({
     boardArray: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                      [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-                      [0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
-                      [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+                      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -65,6 +67,7 @@ new Vue ({
 
     },
     clickHandler: function() {
+      this.gotime = true;
       this.toggleButton();
       this.createBoard();
     },
@@ -77,9 +80,75 @@ new Vue ({
       this.button == "START" ? this.button = "STOP" : this.button = "START";
     },
 
+    originalBoard: function() {
+    console.log('hi there');
+      for (let i = 1; i <= 10; i++ ){
+        var node = document.createElement("div");
+        node.classList.add("gridStylingLine", "inlineit", "flex-center", "p-0",  "m-0");
+        document.getElementById("original").appendChild(node);
+        for (let j = 1; j <= 10; j++ ){
+          var square = document.createElement("div");
+          square.classList.add("gridStyling", "border", "inlineit");
+          node.appendChild(square);
+          square.id = this.k;
+
+          // square.onclick = function(this.id) {console.log(id
+          let vue = this;
+            square.onclick = function() {
+              // console.log("edit board");
+
+              this.classList.add("blackBackground");
+              let numTwo = 0;
+              let numOne = 0;
+
+              if(!this.id[1]){
+                numOne = 0;
+                numTwo = this.id;
+              }else{
+                numTwo = this.id[1];
+                numOne = this.id[0]
+
+              }
+              console.log("num one", numOne, numTwo);
+
+
+
+                // console.log("edit board");
+                if(vue.boardArray[numOne][numTwo] == 0){
+                  vue.boardArray[numOne][numTwo] = 1;
+                }else{
+                  vue.boardArray[numOne][numTwo] = 0;
+                }
+
+              console.log(vue.boardArray);
+
+
+
+
+
+            };
+          this.k++;
+        }
+      }
+    },
+
+    editBoard: function(square){
+      console.log("edit board");
+      if (square == 1){
+        if(this.boardArray[0][0] == 0){
+        this.boardArray[0][0] = 1;
+      }else{
+        this.boardArray[0][0] = 0;
+      }
+      }
+      console.log(this.boardArray);
+    },
+
 
 
     createBoard: function() {
+
+      console.log(this.boardArray);
 
       if (this.button == "START"){
         return;
@@ -184,10 +253,41 @@ new Vue ({
 
   computed: {
   classObject: function () {
-    this.boxNum ++;
+    this.boxNum++;
     return this.boxNum;
 
   }
 }
 
 });
+
+function highlightSquare(id){
+  console.log(id);
+
+}
+
+
+
+
+let k = 1;
+
+// function originalBoard(){
+// console.log('hi there');
+//   for (let i = 1; i <= 10; i++ ){
+//     var node = document.createElement("div");
+//     node.classList.add("gridStylingLine", "inlineit", "flex-center", "p-0",  "m-0");
+//     document.getElementById("original").appendChild(node);
+//     for (let j = 1; j <= 10; j++ ){
+//       var square = document.createElement("div");
+//       square.classList.add("gridStyling", "border", "inlineit");
+//       node.appendChild(square);
+//       square.id = k;
+//       // square.onclick = function(this.id) {console.log(id
+//         square.onclick = function() {
+//           this.classList.add("blackBackground");
+//
+//           console.log(this.id); };
+//       k++;
+//     }
+//   }
+// }
