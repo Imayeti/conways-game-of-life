@@ -254,6 +254,7 @@ new Vue ({
 
   mounted: function(){
     this.originalBoard()
+    alert("click the grid to highlight the boxes and then press start to watch them interact")
  },
 
   computed: {
