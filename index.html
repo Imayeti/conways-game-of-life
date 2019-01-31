@@ -22,16 +22,17 @@
   <div id="gameboard" class="container mt-5" v-cloak >
 
 
-<h1 class="text-center mb-5">CONWAY'S GAME OF LIFE</h1>
-
+<h1  class="text-center mb-5">CONWAY'S GAME OF LIFE</h1>
+<img v-show="pointer" src="hand.png" style="width: 50px;" id="pot">
 
 <div class="flex-center">
   <button type="button" name="button" class="btn-sm bg-white" onclick="location.reload()">New Board</button>
 
 </div>
     <!-- <button class="btn btn-primary" v-on:click="stop">STOP</button> -->
-    <h6 class="mt-5 mb-4 text-center" >TICKS - {{ticks}}</h6>
+    <h6 class="mt-4 mb-4 text-center" >TICKS - {{ticks}}</h6>
 
+    <h5 class="text-center mb-3" >click squares to highlight them and then press START</h5>
 
     <div id="original" v-show="!gotime">
 

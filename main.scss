@@ -71,5 +71,17 @@ body {
 }
 
 .pointer {
-   cursor: pointer; 
+   cursor: pointer;
+}
+
+#pot{
+    bottom:50%;
+    position:absolute;
+    -webkit-animation:linear infinite alternate;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 2s;
+}
+@-webkit-keyframes run {
+  from {left: 30%;}
+to {left: 40%;}
 }

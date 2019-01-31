@@ -10,6 +10,7 @@ new Vue ({
 
 
   data: {
+    pointer: true,
     gotime: false,
     k: 0,
     boxNum: 0,
@@ -97,7 +98,7 @@ new Vue ({
           let vue = this;
             square.onclick = function() {
               // console.log("edit board");
-
+              vue.pointer = false;
               this.classList.add("blackBackground");
               let numTwo = 0;
               let numOne = 0;
@@ -254,7 +255,7 @@ new Vue ({
 
   mounted: function(){
     this.originalBoard()
-    alert("click the grid to highlight the boxes and then press start to watch them interact")
+
  },
 
   computed: {
