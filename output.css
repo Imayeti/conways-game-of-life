@@ -7507,6 +7507,10 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 300 auto; }
 
 body {
-  background-color: #abaaca !important; }
+  background-color: #fb7b1d !important;
+  font-family: 'Bowlby One SC', cursive; }
+
+.pointer {
+  cursor: pointer; }
 
 /*# sourceMappingURL=output.css.map */
