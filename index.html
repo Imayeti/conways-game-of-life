@@ -23,7 +23,6 @@
 
 
 <h1  class="text-center mb-5">CONWAY'S GAME OF LIFE</h1>
-<img v-show="pointer" src="hand.png" style="width: 50px;" id="pot">
 
 <div class="flex-center">
   <button type="button" name="button" class="btn-sm bg-white" onclick="location.reload()">New Board</button>
@@ -32,11 +31,19 @@
     <!-- <button class="btn btn-primary" v-on:click="stop">STOP</button> -->
     <h6 class="mt-4 mb-4 text-center" >TICKS - {{ticks}}</h6>
 
-    <h5 class="text-center mb-3" >click squares to highlight them and then press START</h5>
+    <h5 class="text-center " >click squares to highlight them and then press START</h5>
 
-    <div id="original" v-show="!gotime">
+  <!-- <div class="div-wrapper"> -->
+
+    <div class="parent" id="original" v-show="!gotime">
+      <img class="pic" v-if="pointer" src="hand.png" style="width: 40px;" id="pot">
+      <div  v-if="!pointer"  style="height: 40px;"></div>
 
     </div>
+
+  <!-- </div> -->
+
+      <div  v-if="gotime"  style="height: 40px;"></div>
 
       <div class="flex-center p-0  m-0" v-if="gotime" v-for="line in boardArray">
         <div class="inlineit gridStylingLine" v-for="each in line" >

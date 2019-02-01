@@ -76,12 +76,26 @@ body {
 
 #pot{
     bottom:50%;
-    position:absolute;
+    position:inherit;
     -webkit-animation:linear infinite alternate;
     -webkit-animation-name: run;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 1s;
 }
 @-webkit-keyframes run {
-  from {left: 30%;}
+  from {left: 35%;}
 to {left: 40%;}
+}
+
+.parent {
+    position: relative;
+    margin: auto;
+
+    width:500px;
+    height:350px;
+}
+
+.pic {
+    position: absolute;
+    top:150px;
+    display: block;
 }
