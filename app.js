@@ -99,7 +99,8 @@ new Vue ({
             square.onclick = function() {
               // console.log("edit board");
               vue.pointer = false;
-              this.classList.add("blackBackground");
+
+
               let numTwo = 0;
               let numOne = 0;
 
@@ -117,8 +118,11 @@ new Vue ({
 
                 // console.log("edit board");
                 if(vue.boardArray[numOne][numTwo] == 0){
+                  console.log("in the spot yeah");
+                  this.classList.add("blackBackground");
                   vue.boardArray[numOne][numTwo] = 1;
                 }else{
+                  this.classList.remove("blackBackground");
                   vue.boardArray[numOne][numTwo] = 0;
                 }
 

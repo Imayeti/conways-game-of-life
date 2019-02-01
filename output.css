@@ -7533,7 +7533,9 @@ body {
 
 .pic {
   position: absolute;
-  top: 150px;
-  display: block; }
+  top: 150px; }
+
+.noBackground {
+  background-color: transparent; }
 
 /*# sourceMappingURL=output.css.map */
