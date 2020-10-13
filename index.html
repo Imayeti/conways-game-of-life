@@ -1,100 +1,71 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="output.css" type="text/css">
-
     <title>Conway's Game Of Life</title>
     <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
   </head>
 
   <body>
-
-
-
-
-
-
-
   <div id="gameboard" class="container mt-5" v-cloak >
 
+    <h1  class="text-center mb-5">CONWAY'S GAME OF LIFE</h1>
 
-<h1  class="text-center mb-5">CONWAY'S GAME OF LIFE</h1>
-
-<div class="flex-center">
-  <button type="button" name="button" class="btn-sm bg-white" onclick="location.reload()">New Board</button>
-
-</div>
+    <div class="flex-center">
+      <button type="button" name="button" class="btn-sm bg-white" onclick="location.reload()">New Board</button>
+    </div>
     <!-- <button class="btn btn-primary" v-on:click="stop">STOP</button> -->
     <h6 class="mt-4 mb-4 text-center" >TICKS - {{ticks}}</h6>
 
     <h5 class="text-center " >click squares to highlight them and then press START</h5>
 
-  <!-- <div class="div-wrapper"> -->
+    <!-- <div class="div-wrapper"> -->
 
     <div class="parent" id="original" v-show="!gotime">
       <img class="pic" v-if="pointer" src="hand.png" style="width: 40px;" id="pot">
       <div  v-if="!pointer"  style="height: 40px;"></div>
-
     </div>
 
-  <!-- </div> -->
+    <!-- </div> -->
 
-      <div  v-if="gotime"  style="height: 40px;"></div>
+    <div  v-if="gotime"  style="height: 40px;"></div>
 
-      <div class="flex-center p-0  m-0" v-if="gotime" v-for="line in boardArray">
-        <div class="inlineit gridStylingLine" v-for="each in line" >
-          <div v-bind:class="classObject" class="border p-0 m-0 inlineit gridStyling " id=" i " v-if="each == 0" >
+    <div class="flex-center p-0  m-0" v-if="gotime" v-for="line in boardArray">
+      <div class="inlineit gridStylingLine" v-for="each in line" >
+        <div v-bind:class="classObject" class="border p-0 m-0 inlineit gridStyling"  v-if="each == 0" >
 
-
-          </div>
-          <div class="border inlineit gridStyling blackBackground m-0" v-if="each == 1">
-
-
-          </div>
+        </div>
+        <div class="border inlineit gridStyling blackBackground m-0" v-if="each == 1">
 
         </div>
       </div>
+    </div>
 
-      <div class="flex-center mt-4">
-        <button class="btn-sm bg-white" @click="clickHandler" >{{ button }}</button>
+    <div class="flex-center mt-4">
+      <button class="btn-sm bg-white" @click="clickHandler" >{{ button }}</button>
+    </div>
 
-      </div>
+    <h5 class="mt-4 text-center">SPEED</h5>
 
-      <h5 class="mt-4 text-center">SPEED</h5>
-      <div class="flex-center">
-
+    <div class="flex-center">
       <div class="slidecontainer">
         <input type="range" v-model="speed" min="1" max="2000" value="300" class="slider" id="myRange">
       </div>
       <p>{{ speed }}</p>
     </div>
 
-
-
-
-
   </div>
 
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
+  <script src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
   </body>
 </html>
